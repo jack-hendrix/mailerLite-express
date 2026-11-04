@@ -1,6 +1,5 @@
 const dotenv = require("dotenv");
 const express = require("express");
-const bodyParser = require("body-parser");
 const cors = require("cors");
 const multer = require("multer");
 
@@ -13,7 +12,7 @@ const storage = multer.memoryStorage();
 const upload = multer({ storage: storage });
 
 app.use(cors());
-app.use(bodyParser.json());
+app.use(express.json());
 
 app.post("/api/subscriber", async (req, res) => {
   const { email } = req.body;
